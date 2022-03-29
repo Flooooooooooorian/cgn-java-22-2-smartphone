@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class BusinessContact extends Contact {
 
     private String companyName;
@@ -15,6 +17,20 @@ public class BusinessContact extends Contact {
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BusinessContact that = (BusinessContact) o;
+        return super.equals(o) &&
+                Objects.equals(getCompanyName(), that.getCompanyName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCompanyName(), getName());
     }
 
     @Override

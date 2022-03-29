@@ -50,7 +50,7 @@ class SmartphoneTest {
 
     private Smartphone generateDummySmartphone() {
         Contact[] contacts = {
-                new Friend("Amiga Anton", "+4917123465"),
+                new Friend("Amigo Anton", "+4917123465"),
                 new BusinessContact("Business Berta", "ACME GmbH"),
         };
         Smartphone smartphone = new Smartphone("S11", "Samsung", contacts);
