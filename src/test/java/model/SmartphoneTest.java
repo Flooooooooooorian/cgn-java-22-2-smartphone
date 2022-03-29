@@ -39,15 +39,20 @@ class SmartphoneTest {
     void testToString() {
         // GIVEN
         Smartphone smartphone = generateDummySmartphone();
-        String expected = "Smartphone{model='S11', brand='Samsung', contacts=[Friend{name='Anton', telephoneNumber='+4917123465'}]}";
+        String expected = "Smartphone{model='S11', brand='Samsung', contacts=[Friend{name='Amiga Anton', telephoneNumber='+4917123465'}, "
+                + "BusinessContact{companyName='ACME GmbH', name='Business Berta'}]}";
 
         // WHEN / THEN
         String actual = smartphone.toString();
         assertEquals(expected, actual);
     }
 
+
     private Smartphone generateDummySmartphone() {
-        Contact[] contacts = {new Friend("Anton", "+4917123465")};
+        Contact[] contacts = {
+                new Friend("Amiga Anton", "+4917123465"),
+                new BusinessContact("Business Berta", "ACME GmbH"),
+        };
         Smartphone smartphone = new Smartphone("S11", "Samsung", contacts);
         return smartphone;
     }
